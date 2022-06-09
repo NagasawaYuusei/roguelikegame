@@ -35,4 +35,9 @@ public class IntervalTimer
         }
         return false;
     }
+
+    public void TimerStopOrPlay(bool on)
+    {
+
+    }
 }

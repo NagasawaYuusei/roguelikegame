@@ -5,13 +5,13 @@ using UnityEngine;
 public class Beem : MonoBehaviour, ISkill
 {
     public SkillDef SkillId => SkillDef.ShotBullet;
-    IntervalTimer _intervalTimer = new IntervalTimer();
-    [SerializeField] float _interval;
-    [SerializeField] int _reflect = 2;
-    [SerializeField] float _reduceInterval;
-    [SerializeField] float _minimumInterval;
-    bool _even;
-    bool _isCurrentShot;
+    [Tooltip("インターバルタイマークラス")]IntervalTimer _intervalTimer = new IntervalTimer();
+    [Tooltip("インターバルの時間設定"), SerializeField] float _interval;
+    [Tooltip("反射回数"), SerializeField] int _reflect = 2;
+    [Tooltip("減らすインターバルの値"), SerializeField] float _reduceInterval;
+    [Tooltip("インターバルの最小値"), SerializeField] float _minimumInterval;
+    [Tooltip("偶数かどうか")]bool _even;
+    [Tooltip("攻撃中かどうか")]bool _isCurrentShot;
     public void Setup()
     {
         _intervalTimer.Setup(_interval);
@@ -19,10 +19,7 @@ public class Beem : MonoBehaviour, ISkill
 
     public void Update()
     {
-        if(!_isCurrentShot)
-        {
-            _intervalTimer.RunTimerOneShot();
-        }
+        _intervalTimer.RunTimerOneShot();
         
         if(_intervalTimer.RunTimerOneShot())
         {
@@ -31,8 +28,13 @@ public class Beem : MonoBehaviour, ISkill
 
         if(_isCurrentShot)
         {
-
+            BeemMethod();
         }
+    }
+
+    void BeemMethod()
+    {
+
     }
 
     public void Levelup()
@@ -49,10 +51,5 @@ public class Beem : MonoBehaviour, ISkill
         {
             Debug.LogError("例外レベルアップ");
         }
-    }
-
-    void BeemMethod()
-    {
-
     }
 }

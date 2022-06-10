@@ -1,4 +1,4 @@
-interface ISkill
+interface ISkillNaga
 {
     SkillDef SkillId { get; }
     void Setup();
@@ -6,7 +6,7 @@ interface ISkill
     void Levelup();
 }
 
-public enum SkillDef
+public enum SkillDefNaga
 {
     ShotBullet = 0,
     AreaAttack = 1,

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class IntervalTimer
+public class IntervalTimerNaga
 {
     float _interval = 1;
     float _timer = 0;

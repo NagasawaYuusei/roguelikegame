@@ -4,6 +4,7 @@ public class IntervalTimerNaga
 {
     float _interval = 1;
     float _timer = 0;
+    bool _isTimer = true;
 
     public void Setup(float inv)
     {
@@ -27,6 +28,8 @@ public class IntervalTimerNaga
 
     public bool RunTimerOneShot()
     {
+        if(!_isTimer)
+            return false;
         _timer += Time.deltaTime;
         if(_timer >= _interval)
         {
@@ -38,6 +41,6 @@ public class IntervalTimerNaga
 
     public void TimerStopOrPlay(bool on)
     {
-
+        _isTimer = on;
     }
 }

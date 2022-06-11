@@ -17,4 +17,5 @@ public enum SkillDef
     Invalid = 0,
     ShotBullet = 1,
     AreaAttack = 2,
+    Beem = 3,
 }
